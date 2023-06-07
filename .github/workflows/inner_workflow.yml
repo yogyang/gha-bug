@@ -5,6 +5,14 @@ on:
       msg:
         required: true
         type: string
+  
+  workflow_dispatch:
+  inputs:
+    msg:
+      required: true
+      type: choice
+      options:
+        - Inner Call
 
 jobs:
   inner_job1:
@@ -14,4 +22,4 @@ jobs:
     steps:
       - name: fake job
         run: |
-          echo "fake fake fake"
+          echo "${{ github.event.inputs.environment }}" 
