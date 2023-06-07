@@ -1,0 +1,11 @@
+name: Caller3
+on: 
+  deployment:
+    branches:
+      - '**'
+
+jobs:
+  caller3_job1:
+    uses: ./.github/workflows/inner_workflow.yml
+    with:
+      msg: 'Caller 3'

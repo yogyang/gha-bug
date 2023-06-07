@@ -1,0 +1,17 @@
+name: Fake WorkFlow to Use
+on:
+  workflow_call:
+    inputs:
+      msg:
+        required: true
+        type: string
+
+jobs:
+  inner_job1:
+    name: Inner job 1
+    runs-on: ubuntu-20.04
+
+    steps:
+      - name: fake job
+        run: |
+          echo "fake fake fake"

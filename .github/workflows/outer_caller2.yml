@@ -1,0 +1,15 @@
+name: Caller2
+on: 
+  workflow_dispatch:
+    inputs:
+      msg:
+        required: true
+        type: choice
+        options:
+          - Caller 2
+
+jobs:
+  caller2_job1:
+    uses: ./.github/workflows/inner_workflow.yml
+    with:
+      msg: ${{ github.event.inputs.msg }}
